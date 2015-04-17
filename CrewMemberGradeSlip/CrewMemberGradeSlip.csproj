@@ -80,6 +80,12 @@
     <Compile Include="Form4507Page1.Designer.cs">
       <DependentUpon>Form4507Page1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form4507Page2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4507Page2.Designer.cs">
+      <DependentUpon>Form4507Page2.cs</DependentUpon>
+    </Compile>
     <Compile Include="ISISstudentsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form4507Page1.resx">
       <DependentUpon>Form4507Page1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4507Page2.resx">
+      <DependentUpon>Form4507Page2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -507,12 +507,12 @@
             // 
             this.label31.AutoSize = true;
             this.label31.BackColor = System.Drawing.Color.White;
-            this.label31.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(490, 721);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(82, 15);
+            this.label31.Size = new System.Drawing.Size(77, 14);
             this.label31.TabIndex = 30;
-            this.label31.Text = "APD PE v1.00";
+            this.label31.Text = "APD LC v1.00";
             // 
             // LBLp1Name
             // 

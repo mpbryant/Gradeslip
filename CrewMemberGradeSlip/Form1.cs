@@ -17,12 +17,14 @@ namespace CrewMemberGradeSlip
     public partial class Form1 : Form
     {
         
-        //creates a new form and enters the data
+        //creates a new form (page1) and enters the data
         Form4507Page1 gs1 = new Form4507Page1();
+
+        //creates a new form (page2) 
+        Form4507Page2 gs2 = new Form4507Page2();
 
         public Form1()
         {
-
             InitializeComponent();
         }
 
@@ -50,7 +52,7 @@ namespace CrewMemberGradeSlip
             gs1.setStudentStartDate(DTPstartdate.Text);
             gs1.setStudentCompleteByDate(DTPcompletebydate.Text);
             gs1.Show();
-
+            gs2.Show();
 
             //open a Word document form
             //Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();

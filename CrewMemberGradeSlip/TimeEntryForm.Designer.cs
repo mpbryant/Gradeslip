@@ -51,22 +51,25 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.commentsTC = new System.Windows.Forms.TabControl();
             this.firstFlightTP = new System.Windows.Forms.TabPage();
-            this.secondFlightTP = new System.Windows.Forms.TabPage();
-            this.thirdFlightTP = new System.Windows.Forms.TabPage();
-            this.fourthFlightTP = new System.Windows.Forms.TabPage();
+            this.ffTB = new System.Windows.Forms.TextBox();
+            this.ffAmPmCB = new System.Windows.Forms.ComboBox();
+            this.ffStartTimeMTB = new System.Windows.Forms.MaskedTextBox();
             this.firstFlightStartTimeLBL = new System.Windows.Forms.Label();
-            this.secondFlightStartTimeLBL = new System.Windows.Forms.Label();
-            this.thirdFlightStartTimeLBL = new System.Windows.Forms.Label();
-            this.fourthFlightStartTimeLBL = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.secondFlightTP = new System.Windows.Forms.TabPage();
+            this.secondFlightTB = new System.Windows.Forms.TextBox();
+            this.amPm2CB = new System.Windows.Forms.ComboBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.secondFlightStartTimeLBL = new System.Windows.Forms.Label();
+            this.thirdFlightTP = new System.Windows.Forms.TabPage();
+            this.thirdFlightTB = new System.Windows.Forms.TextBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.thirdFlightStartTimeLBL = new System.Windows.Forms.Label();
+            this.fourthFlightTP = new System.Windows.Forms.TabPage();
+            this.fourthFlightTB = new System.Windows.Forms.TextBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fourthFlightStartTimeLBL = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -118,6 +121,7 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.Text = "Day Flight Time";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -130,7 +134,7 @@
             this.comboBox2.Location = new System.Drawing.Point(6, 46);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 4;
+            this.comboBox2.TabIndex = 7;
             this.comboBox2.Text = "Night Flight Time";
             // 
             // comboBox3
@@ -144,7 +148,7 @@
             this.comboBox3.Location = new System.Drawing.Point(6, 73);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 6;
+            this.comboBox3.TabIndex = 12;
             this.comboBox3.Text = "NVG Flight Time";
             // 
             // flightTimeBox1
@@ -155,6 +159,7 @@
             this.flightTimeBox1.TabIndex = 3;
             this.flightTimeBox1.Text = "0.0";
             this.flightTimeBox1.TextChanged += new System.EventHandler(this.flightTimeBox1_TextChanged);
+            this.flightTimeBox1.Leave += new System.EventHandler(this.flightTimeBox1_Leave);
             // 
             // flightTimeBox2
             // 
@@ -162,7 +167,7 @@
             this.flightTimeBox2.Location = new System.Drawing.Point(6, 46);
             this.flightTimeBox2.Name = "flightTimeBox2";
             this.flightTimeBox2.Size = new System.Drawing.Size(100, 20);
-            this.flightTimeBox2.TabIndex = 5;
+            this.flightTimeBox2.TabIndex = 8;
             this.flightTimeBox2.Text = "0.0";
             this.flightTimeBox2.TextChanged += new System.EventHandler(this.flightTimeBox2_TextChanged);
             // 
@@ -172,7 +177,7 @@
             this.flightTimeBox3.Location = new System.Drawing.Point(6, 73);
             this.flightTimeBox3.Name = "flightTimeBox3";
             this.flightTimeBox3.Size = new System.Drawing.Size(100, 20);
-            this.flightTimeBox3.TabIndex = 7;
+            this.flightTimeBox3.TabIndex = 13;
             this.flightTimeBox3.Text = "0.0";
             this.flightTimeBox3.TextChanged += new System.EventHandler(this.flightTimeBox3_TextChanged);
             // 
@@ -210,7 +215,7 @@
             this.comboBox4.Location = new System.Drawing.Point(6, 100);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 7;
+            this.comboBox4.TabIndex = 17;
             this.comboBox4.Text = "NVG Flight Time";
             // 
             // groupBox2
@@ -232,7 +237,7 @@
             this.flightTimeBox4.Location = new System.Drawing.Point(6, 100);
             this.flightTimeBox4.Name = "flightTimeBox4";
             this.flightTimeBox4.Size = new System.Drawing.Size(100, 20);
-            this.flightTimeBox4.TabIndex = 8;
+            this.flightTimeBox4.TabIndex = 18;
             this.flightTimeBox4.Text = "0.0";
             this.flightTimeBox4.TextChanged += new System.EventHandler(this.flightTimeBox4_TextChanged);
             // 
@@ -241,7 +246,7 @@
             this.btnSaveData.Location = new System.Drawing.Point(58, 248);
             this.btnSaveData.Name = "btnSaveData";
             this.btnSaveData.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveData.TabIndex = 11;
+            this.btnSaveData.TabIndex = 17;
             this.btnSaveData.TabStop = false;
             this.btnSaveData.Text = "Save Data";
             this.btnSaveData.UseVisualStyleBackColor = true;
@@ -252,7 +257,7 @@
             this.printBTN.Location = new System.Drawing.Point(148, 248);
             this.printBTN.Name = "printBTN";
             this.printBTN.Size = new System.Drawing.Size(75, 23);
-            this.printBTN.TabIndex = 12;
+            this.printBTN.TabIndex = 18;
             this.printBTN.TabStop = false;
             this.printBTN.Text = "Print";
             this.printBTN.UseVisualStyleBackColor = true;
@@ -299,7 +304,7 @@
             this.groupBox3.Controls.Add(this.commentsTC);
             this.groupBox3.Location = new System.Drawing.Point(389, 9);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(476, 262);
+            this.groupBox3.Size = new System.Drawing.Size(285, 262);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Comments";
@@ -314,61 +319,55 @@
             this.commentsTC.Location = new System.Drawing.Point(3, 16);
             this.commentsTC.Name = "commentsTC";
             this.commentsTC.SelectedIndex = 0;
-            this.commentsTC.Size = new System.Drawing.Size(470, 243);
+            this.commentsTC.Size = new System.Drawing.Size(279, 243);
             this.commentsTC.TabIndex = 18;
+            this.commentsTC.TabStop = false;
             // 
             // firstFlightTP
             // 
-            this.firstFlightTP.Controls.Add(this.textBox1);
-            this.firstFlightTP.Controls.Add(this.comboBox5);
-            this.firstFlightTP.Controls.Add(this.maskedTextBox1);
+            this.firstFlightTP.Controls.Add(this.ffTB);
+            this.firstFlightTP.Controls.Add(this.ffAmPmCB);
+            this.firstFlightTP.Controls.Add(this.ffStartTimeMTB);
             this.firstFlightTP.Controls.Add(this.firstFlightStartTimeLBL);
             this.firstFlightTP.Location = new System.Drawing.Point(4, 22);
             this.firstFlightTP.Name = "firstFlightTP";
             this.firstFlightTP.Padding = new System.Windows.Forms.Padding(3);
-            this.firstFlightTP.Size = new System.Drawing.Size(462, 217);
+            this.firstFlightTP.Size = new System.Drawing.Size(271, 217);
             this.firstFlightTP.TabIndex = 0;
             this.firstFlightTP.Text = "First Flight";
             this.firstFlightTP.UseVisualStyleBackColor = true;
             // 
-            // secondFlightTP
+            // ffTB
             // 
-            this.secondFlightTP.Controls.Add(this.comboBox6);
-            this.secondFlightTP.Controls.Add(this.maskedTextBox2);
-            this.secondFlightTP.Controls.Add(this.secondFlightStartTimeLBL);
-            this.secondFlightTP.Location = new System.Drawing.Point(4, 22);
-            this.secondFlightTP.Name = "secondFlightTP";
-            this.secondFlightTP.Padding = new System.Windows.Forms.Padding(3);
-            this.secondFlightTP.Size = new System.Drawing.Size(462, 217);
-            this.secondFlightTP.TabIndex = 1;
-            this.secondFlightTP.Text = "SecondFlight";
-            this.secondFlightTP.UseVisualStyleBackColor = true;
+            this.ffTB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ffTB.Location = new System.Drawing.Point(3, 24);
+            this.ffTB.Multiline = true;
+            this.ffTB.Name = "ffTB";
+            this.ffTB.Size = new System.Drawing.Size(265, 190);
+            this.ffTB.TabIndex = 6;
             // 
-            // thirdFlightTP
+            // ffAmPmCB
             // 
-            this.thirdFlightTP.Controls.Add(this.comboBox7);
-            this.thirdFlightTP.Controls.Add(this.maskedTextBox3);
-            this.thirdFlightTP.Controls.Add(this.thirdFlightStartTimeLBL);
-            this.thirdFlightTP.Location = new System.Drawing.Point(4, 22);
-            this.thirdFlightTP.Name = "thirdFlightTP";
-            this.thirdFlightTP.Padding = new System.Windows.Forms.Padding(3);
-            this.thirdFlightTP.Size = new System.Drawing.Size(462, 217);
-            this.thirdFlightTP.TabIndex = 2;
-            this.thirdFlightTP.Text = "Third Flight";
-            this.thirdFlightTP.UseVisualStyleBackColor = true;
+            this.ffAmPmCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ffAmPmCB.FormattingEnabled = true;
+            this.ffAmPmCB.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.ffAmPmCB.Location = new System.Drawing.Point(138, 0);
+            this.ffAmPmCB.Name = "ffAmPmCB";
+            this.ffAmPmCB.Size = new System.Drawing.Size(43, 21);
+            this.ffAmPmCB.TabIndex = 5;
+            this.ffAmPmCB.Text = "AM";
             // 
-            // fourthFlightTP
+            // ffStartTimeMTB
             // 
-            this.fourthFlightTP.Controls.Add(this.comboBox8);
-            this.fourthFlightTP.Controls.Add(this.maskedTextBox4);
-            this.fourthFlightTP.Controls.Add(this.fourthFlightStartTimeLBL);
-            this.fourthFlightTP.Location = new System.Drawing.Point(4, 22);
-            this.fourthFlightTP.Name = "fourthFlightTP";
-            this.fourthFlightTP.Padding = new System.Windows.Forms.Padding(3);
-            this.fourthFlightTP.Size = new System.Drawing.Size(462, 217);
-            this.fourthFlightTP.TabIndex = 3;
-            this.fourthFlightTP.Text = "Fourth Flight";
-            this.fourthFlightTP.UseVisualStyleBackColor = true;
+            this.ffStartTimeMTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ffStartTimeMTB.Location = new System.Drawing.Point(95, 3);
+            this.ffStartTimeMTB.Mask = "90:00";
+            this.ffStartTimeMTB.Name = "ffStartTimeMTB";
+            this.ffStartTimeMTB.Size = new System.Drawing.Size(37, 13);
+            this.ffStartTimeMTB.TabIndex = 4;
+            this.ffStartTimeMTB.ValidatingType = typeof(System.DateTime);
             // 
             // firstFlightStartTimeLBL
             // 
@@ -379,6 +378,52 @@
             this.firstFlightStartTimeLBL.TabIndex = 0;
             this.firstFlightStartTimeLBL.Text = "Flight Start Time";
             // 
+            // secondFlightTP
+            // 
+            this.secondFlightTP.Controls.Add(this.secondFlightTB);
+            this.secondFlightTP.Controls.Add(this.amPm2CB);
+            this.secondFlightTP.Controls.Add(this.maskedTextBox2);
+            this.secondFlightTP.Controls.Add(this.secondFlightStartTimeLBL);
+            this.secondFlightTP.Location = new System.Drawing.Point(4, 22);
+            this.secondFlightTP.Name = "secondFlightTP";
+            this.secondFlightTP.Padding = new System.Windows.Forms.Padding(3);
+            this.secondFlightTP.Size = new System.Drawing.Size(271, 217);
+            this.secondFlightTP.TabIndex = 1;
+            this.secondFlightTP.Text = "SecondFlight";
+            this.secondFlightTP.UseVisualStyleBackColor = true;
+            // 
+            // secondFlightTB
+            // 
+            this.secondFlightTB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.secondFlightTB.Location = new System.Drawing.Point(3, 24);
+            this.secondFlightTB.Multiline = true;
+            this.secondFlightTB.Name = "secondFlightTB";
+            this.secondFlightTB.Size = new System.Drawing.Size(265, 190);
+            this.secondFlightTB.TabIndex = 11;
+            // 
+            // amPm2CB
+            // 
+            this.amPm2CB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.amPm2CB.FormattingEnabled = true;
+            this.amPm2CB.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.amPm2CB.Location = new System.Drawing.Point(138, 0);
+            this.amPm2CB.Name = "amPm2CB";
+            this.amPm2CB.Size = new System.Drawing.Size(43, 21);
+            this.amPm2CB.TabIndex = 10;
+            this.amPm2CB.Text = "AM";
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox2.Location = new System.Drawing.Point(95, 3);
+            this.maskedTextBox2.Mask = "90:00";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(37, 13);
+            this.maskedTextBox2.TabIndex = 9;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            // 
             // secondFlightStartTimeLBL
             // 
             this.secondFlightStartTimeLBL.AutoSize = true;
@@ -388,69 +433,28 @@
             this.secondFlightStartTimeLBL.TabIndex = 1;
             this.secondFlightStartTimeLBL.Text = "Flight Start Time";
             // 
-            // thirdFlightStartTimeLBL
+            // thirdFlightTP
             // 
-            this.thirdFlightStartTimeLBL.AutoSize = true;
-            this.thirdFlightStartTimeLBL.Location = new System.Drawing.Point(6, 3);
-            this.thirdFlightStartTimeLBL.Name = "thirdFlightStartTimeLBL";
-            this.thirdFlightStartTimeLBL.Size = new System.Drawing.Size(83, 13);
-            this.thirdFlightStartTimeLBL.TabIndex = 1;
-            this.thirdFlightStartTimeLBL.Text = "Flight Start Time";
+            this.thirdFlightTP.Controls.Add(this.thirdFlightTB);
+            this.thirdFlightTP.Controls.Add(this.comboBox7);
+            this.thirdFlightTP.Controls.Add(this.maskedTextBox3);
+            this.thirdFlightTP.Controls.Add(this.thirdFlightStartTimeLBL);
+            this.thirdFlightTP.Location = new System.Drawing.Point(4, 22);
+            this.thirdFlightTP.Name = "thirdFlightTP";
+            this.thirdFlightTP.Padding = new System.Windows.Forms.Padding(3);
+            this.thirdFlightTP.Size = new System.Drawing.Size(271, 217);
+            this.thirdFlightTP.TabIndex = 2;
+            this.thirdFlightTP.Text = "Third Flight";
+            this.thirdFlightTP.UseVisualStyleBackColor = true;
             // 
-            // fourthFlightStartTimeLBL
+            // thirdFlightTB
             // 
-            this.fourthFlightStartTimeLBL.AutoSize = true;
-            this.fourthFlightStartTimeLBL.Location = new System.Drawing.Point(6, 3);
-            this.fourthFlightStartTimeLBL.Name = "fourthFlightStartTimeLBL";
-            this.fourthFlightStartTimeLBL.Size = new System.Drawing.Size(83, 13);
-            this.fourthFlightStartTimeLBL.TabIndex = 1;
-            this.fourthFlightStartTimeLBL.Text = "Flight Start Time";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Location = new System.Drawing.Point(95, 3);
-            this.maskedTextBox1.Mask = "90:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(37, 13);
-            this.maskedTextBox1.TabIndex = 2;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.comboBox5.Location = new System.Drawing.Point(138, 0);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(43, 21);
-            this.comboBox5.TabIndex = 3;
-            this.comboBox5.Text = "AM";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.comboBox6.Location = new System.Drawing.Point(138, 0);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(43, 21);
-            this.comboBox6.TabIndex = 5;
-            this.comboBox6.Text = "AM";
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox2.Location = new System.Drawing.Point(95, 3);
-            this.maskedTextBox2.Mask = "90:00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(37, 13);
-            this.maskedTextBox2.TabIndex = 4;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.thirdFlightTB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.thirdFlightTB.Location = new System.Drawing.Point(3, 24);
+            this.thirdFlightTB.Multiline = true;
+            this.thirdFlightTB.Name = "thirdFlightTB";
+            this.thirdFlightTB.Size = new System.Drawing.Size(265, 190);
+            this.thirdFlightTB.TabIndex = 16;
             // 
             // comboBox7
             // 
@@ -462,7 +466,7 @@
             this.comboBox7.Location = new System.Drawing.Point(138, 0);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(43, 21);
-            this.comboBox7.TabIndex = 5;
+            this.comboBox7.TabIndex = 15;
             this.comboBox7.Text = "AM";
             // 
             // maskedTextBox3
@@ -472,8 +476,40 @@
             this.maskedTextBox3.Mask = "90:00";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(37, 13);
-            this.maskedTextBox3.TabIndex = 4;
+            this.maskedTextBox3.TabIndex = 14;
             this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
+            // 
+            // thirdFlightStartTimeLBL
+            // 
+            this.thirdFlightStartTimeLBL.AutoSize = true;
+            this.thirdFlightStartTimeLBL.Location = new System.Drawing.Point(6, 3);
+            this.thirdFlightStartTimeLBL.Name = "thirdFlightStartTimeLBL";
+            this.thirdFlightStartTimeLBL.Size = new System.Drawing.Size(83, 13);
+            this.thirdFlightStartTimeLBL.TabIndex = 1;
+            this.thirdFlightStartTimeLBL.Text = "Flight Start Time";
+            // 
+            // fourthFlightTP
+            // 
+            this.fourthFlightTP.Controls.Add(this.fourthFlightTB);
+            this.fourthFlightTP.Controls.Add(this.comboBox8);
+            this.fourthFlightTP.Controls.Add(this.maskedTextBox4);
+            this.fourthFlightTP.Controls.Add(this.fourthFlightStartTimeLBL);
+            this.fourthFlightTP.Location = new System.Drawing.Point(4, 22);
+            this.fourthFlightTP.Name = "fourthFlightTP";
+            this.fourthFlightTP.Padding = new System.Windows.Forms.Padding(3);
+            this.fourthFlightTP.Size = new System.Drawing.Size(271, 217);
+            this.fourthFlightTP.TabIndex = 3;
+            this.fourthFlightTP.Text = "Fourth Flight";
+            this.fourthFlightTP.UseVisualStyleBackColor = true;
+            // 
+            // fourthFlightTB
+            // 
+            this.fourthFlightTB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.fourthFlightTB.Location = new System.Drawing.Point(3, 24);
+            this.fourthFlightTB.Multiline = true;
+            this.fourthFlightTB.Name = "fourthFlightTB";
+            this.fourthFlightTB.Size = new System.Drawing.Size(265, 190);
+            this.fourthFlightTB.TabIndex = 16;
             // 
             // comboBox8
             // 
@@ -485,7 +521,7 @@
             this.comboBox8.Location = new System.Drawing.Point(138, 0);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(43, 21);
-            this.comboBox8.TabIndex = 5;
+            this.comboBox8.TabIndex = 15;
             this.comboBox8.Text = "AM";
             // 
             // maskedTextBox4
@@ -495,23 +531,23 @@
             this.maskedTextBox4.Mask = "90:00";
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(37, 13);
-            this.maskedTextBox4.TabIndex = 4;
+            this.maskedTextBox4.TabIndex = 19;
             this.maskedTextBox4.ValidatingType = typeof(System.DateTime);
             // 
-            // textBox1
+            // fourthFlightStartTimeLBL
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox1.Location = new System.Drawing.Point(3, 24);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(456, 190);
-            this.textBox1.TabIndex = 4;
+            this.fourthFlightStartTimeLBL.AutoSize = true;
+            this.fourthFlightStartTimeLBL.Location = new System.Drawing.Point(6, 3);
+            this.fourthFlightStartTimeLBL.Name = "fourthFlightStartTimeLBL";
+            this.fourthFlightStartTimeLBL.Size = new System.Drawing.Size(83, 13);
+            this.fourthFlightStartTimeLBL.TabIndex = 1;
+            this.fourthFlightStartTimeLBL.Text = "Flight Start Time";
             // 
             // TimeEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 284);
+            this.ClientSize = new System.Drawing.Size(685, 284);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label6);
@@ -580,14 +616,17 @@
         private System.Windows.Forms.Label thirdFlightStartTimeLBL;
         private System.Windows.Forms.TabPage fourthFlightTP;
         private System.Windows.Forms.Label fourthFlightStartTimeLBL;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.MaskedTextBox ffStartTimeMTB;
+        private System.Windows.Forms.ComboBox ffAmPmCB;
+        private System.Windows.Forms.ComboBox amPm2CB;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ffTB;
+        private System.Windows.Forms.TextBox secondFlightTB;
+        private System.Windows.Forms.TextBox thirdFlightTB;
+        private System.Windows.Forms.TextBox fourthFlightTB;
     }
 }

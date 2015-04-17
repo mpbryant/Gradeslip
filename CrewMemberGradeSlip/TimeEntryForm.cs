@@ -28,6 +28,12 @@ namespace CrewMemberGradeSlip
         private string dayFlightTime4;
         private string nightFlightTime4;
         private string nvgFlightTime4;
+        private string ffStartTime;
+        private string ffAmPm;
+        private string comment;
+        private string startTime2;
+        private string amPm2;
+        private string comment2;
         
         
 
@@ -41,6 +47,8 @@ namespace CrewMemberGradeSlip
         
         private void flightTimeBox1_TextChanged(object sender, EventArgs e)
         {
+
+            
             try
             {
 
@@ -122,7 +130,10 @@ namespace CrewMemberGradeSlip
                 
             }
         }
+
         
+
+
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             DateTime dateBox1;
@@ -222,6 +233,23 @@ namespace CrewMemberGradeSlip
             }
 
 
+            #region Comment box logic
+            //sets the variables from the time entry form so the GET statements can retrieve data
+
+            ffStartTime = ffStartTimeMTB.Text;
+            ffAmPm = ffAmPmCB.Text;
+            comment = ffTB.Text;
+
+            amPm2 = amPm2CB.Text;
+            startTime2 = maskedTextBox2.Text;
+            comment2 = secondFlightTB.Text;
+
+            
+
+            #endregion
+
+
+
 
 
             //display the information on the form
@@ -248,7 +276,29 @@ namespace CrewMemberGradeSlip
             Application.OpenForms.OfType<Form4507Page1>().First().Repaint();//repaints the string so it shows up without having to move the form on the screen
 
 
+            //used to get the data from the first flight
+            Application.OpenForms.OfType<Form4507Page2>().First().GetComment(flightDate, ffStartTime, ffAmPm, comment);
+
+            //used to get the data from the second flight
+            if (flightTimeBox2.Text != "0.0")
+            {
+                Application.OpenForms.OfType<Form4507Page2>().First().Getcomment2(flightDate, 
+            }
+
+
         }
+
+
+
+
+
+
+
+
+
+
+
+
 
         public void printBTN_Click(object sender, EventArgs e)
         {
@@ -256,6 +306,20 @@ namespace CrewMemberGradeSlip
 
             
            
+        }
+
+        
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            commentsTC.SelectedTab = firstFlightTP;
+            comboBox1.Focus();
+        }
+
+        
+        private void flightTimeBox1_Leave(object sender, EventArgs e)
+        {
+            commentsTC.SelectedTab = firstFlightTP;//auto selects comment tab
         }
 
 
